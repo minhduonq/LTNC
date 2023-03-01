@@ -1,20 +1,20 @@
 Week1.
 Phần A
 1.  bool isA = (90 <= grade && grade <= 100);
-    Đoạn code trên so sánh grade với 90 và 100 rồi trả về giá trị bool là true hoặc false
+    //trả về giá trị bool là true hoặc false
 
 2.  double x = (double) (3/5); cout << x;
-    Đoạn chương trình trên in ra 0
+    // in ra 0
 
 3.  int x = 65536;
   long y = x * x;
   cout << y;
-  Đoạn code trên không in ra được 2^32 do bị tràn số. Biến x có dữ liệu int chỉ chứa được 2^31 giá trị, bit đầu tiên ký hiệu dấu âm hoặc dương
+  //Đoạn code trên không in ra được 2^32 do bị tràn số. Biến x có dữ liệu int chỉ chứa được 2^31 giá trị, bit đầu tiên ký hiệu dấu âm hoặc dương
 
 4.  (sqrt(2) * sqrt(2) == 2)
-  Kết quả của biểu thức là true
+  // true
 5.
-  Chương trình vẫn được compile nhưng gặp runtime error, giá trị trả về là giá trị rác 
+  Chương trình vẫn được compile nhưng warning: division by zero [-Wdiv-by-zero], ko in ra giá trị gì.
 6.
   VƠi dòng lệnh int a = 27*”three”
   Chương trình báo lỗi không thể nhân hai kiểu dữ liệu khác nhau
@@ -22,16 +22,16 @@ Phần A
 
   double x;
   cout << x;
-  Với dòng lệnh trên thì sẽ in ra một giá trị rác
+  // in ra 0.
 
 7.  int threeInt = 3;
   int fourInt  = 4;
   double threeDouble = 3.0;
   double fourDouble  = 4.0;
-  cout << threeInt / fourInt << endl;  -> output = 0
-  cout << threeInt / fourDouble << endl; -> output = 0.75
-  cout << threeDouble / fourInt << endl; -> output = 0.75
-  cout << threeDouble / fourDouble << endl; -> output = 0.75
+  cout << threeInt / fourInt << endl;  // in ra  0
+  cout << threeInt / fourDouble << endl; // in ra 0.75
+  cout << threeDouble / fourInt << endl; // in ra 0.75
+  cout << threeDouble / fourDouble << endl; // in ra 0.75
 
 8.  int  arg1;
     arg1 = -1;
@@ -49,7 +49,7 @@ Phần A
       cout << arg1 << "\n"; 
     } 
     return 0;
-    Chương trình này sẽ không gặp lỗi, khi ra khỏi khối lệnh con thì arg1 chỉ tới giá trị -1
+    // Chương trình này sẽ không gặp lỗi, khi ở trong  khối lệnh con thì arg1 chỉ tới giá trị 'A'
 
 10.  int arg1;
     arg1 = -1;
@@ -60,16 +60,17 @@ Phần A
     return 0; 
 
 
-    Chương trình không gặp lỗi, kết quả in ra là -1
+    // Chương trình không gặp lỗi, kết quả in ra là -1
 
 11.  double C = (F - 32) * (5 / 9);
   Kết quả sẽ luôn là 0 do 5 và 9 là hai giá trị int chưa được ép kiểu dữ liệu
+  Sửa : int(5/9)
 
 12. if (10 > 5); 
      else; {           
         cout << "Here";
      };
-  Output: Here
+  // Here
 
 
 Phần B
