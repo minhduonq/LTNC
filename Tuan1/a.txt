@@ -1,0 +1,181 @@
+Week1.
+Phần A
+1.  bool isA = (90 <= grade && grade <= 100);
+    Đoạn code trên so sánh grade với 90 và 100 rồi trả về giá trị bool là true hoặc false
+
+2.  double x = (double) (3/5); cout << x;
+    Đoạn chương trình trên in ra 0
+
+3.  int x = 65536;
+  long y = x * x;
+  cout << y;
+  Đoạn code trên không in ra được 2^32 do bị tràn số. Biến x có dữ liệu int chỉ chứa được 2^31 giá trị, bit đầu tiên ký hiệu dấu âm hoặc dương
+
+4.  (sqrt(2) * sqrt(2) == 2)
+  Kết quả của biểu thức là true
+5.
+  Chương trình vẫn được compile nhưng gặp runtime error, giá trị trả về là giá trị rác 
+6.
+  VƠi dòng lệnh int a = 27*”three”
+  Chương trình báo lỗi không thể nhân hai kiểu dữ liệu khác nhau
+  error: invalid operands of types 'int' and 'const char [6]' to binary 'operator*'
+
+  double x;
+  cout << x;
+  Với dòng lệnh trên thì sẽ in ra một giá trị rác
+
+7.  int threeInt = 3;
+  int fourInt  = 4;
+  double threeDouble = 3.0;
+  double fourDouble  = 4.0;
+  cout << threeInt / fourInt << endl;  -> output = 0
+  cout << threeInt / fourDouble << endl; -> output = 0.75
+  cout << threeDouble / fourInt << endl; -> output = 0.75
+  cout << threeDouble / fourDouble << endl; -> output = 0.75
+
+8.  int  arg1;
+    arg1 = -1;
+    int x, y, z;
+    char myDouble = ’5 ’;
+    char arg1 = ’A ’;
+    cout << arg1 << "\n";
+    return 0;
+  Chương trình gặp lỗi conflicting declaration và ‘A’ was not declared
+
+9.  int arg1;
+    arg1 = -1;
+    {
+      char arg1 = ’A’; 
+      cout << arg1 << "\n"; 
+    } 
+    return 0;
+    Chương trình này sẽ không gặp lỗi, khi ra khỏi khối lệnh con thì arg1 chỉ tới giá trị -1
+
+10.  int arg1;
+    arg1 = -1;
+    {
+      char arg1 = ’A’; 
+    } 
+    cout << arg1 << "\n"; 
+    return 0; 
+
+
+    Chương trình không gặp lỗi, kết quả in ra là -1
+
+11.  double C = (F - 32) * (5 / 9);
+  Kết quả sẽ luôn là 0 do 5 và 9 là hai giá trị int chưa được ép kiểu dữ liệu
+
+12. if (10 > 5); 
+     else; {           
+        cout << "Here";
+     };
+  Output: Here
+
+
+Phần B
+13.int x, y; cin >> x >> y;
+   double distance = sqrt(x*x+y*y);
+   cout << distance;
+
+
+15. string f0 = "a", f1 = "b", fn = "";
+    int n; cin >> n;
+    if(n == 0){
+        cout << f0;
+        return 0;
+    }
+    if(n == 1){
+        cout <<  f1;
+        return 0;
+    }
+    for(int i = 2; i <= n; i++){
+        fn = f1 + f0;
+        f0 = f1;
+        f1 = fn;
+    }
+    cout << fn;
+
+16. #include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    		int a,b,c; cin >> a >> b >> c;
+    		cout << boolalpha << (a == b && b == c && c == a);
+}
+
+19. bool b;
+    int x, y, z; cin >> x >> y >> z;
+    if(y-x >0){
+        if(z-y > 0){
+            b = true;
+        }
+        else
+            b = false;
+    }
+    else
+        b = false;
+
+    cout << boolalpha << b;
+
+20. int a, b; 
+    cin >> a >> b;
+    if(a%7==0 && b%7==0) cout << “true” << endl;
+    else cout << “false” << endl;
+
+Phần C
+ 26.      int n; cin >> n;
+    double sum = 0;
+    int min = 1e9, max = -1;
+    for(int i = 0; i < n; i++){
+        int x; cin >> x;
+        sum += x;
+        if(x <= min){
+            min = x;
+        }
+        if(x >= max){
+            max = x;
+        }
+    }
+    cout << sum/n << endl;
+    cout << max << endl;
+    cout << min << endl;
+
+27. int n;
+    while(cin >> n){
+        (n >= 0 && n% 5 == 0) ? cout << n/5 : cout << -1 << endl;
+        if(n == -1){
+            cout << "Bye";
+            break;
+        }
+    }
+
+28. for(int i = 1; i <= 24; i++){
+        if(i == 1){
+        cout << 12 << " midnight" << endl;
+        }
+        else if(i == 13){
+            cout << 12 << " noon" << endl;
+        }
+        else if(i < 13){
+            cout << i-1 << "am" << endl;
+        }
+        else
+            cout << i-13 << "pm" << endl;
+    }
+
+29. int n; cin >> n;
+    for(int i = 0; i <  n; i++){
+        for(int j = 0; j <= i; j++){
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+30. int n; cin >> n;
+    for(int i = 0; i <  n; i++){
+        for(int j = n-i; j >0 ; j--){
+            cout << "*";
+        }
+        cout << endl;
+    }
