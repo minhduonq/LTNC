@@ -1,0 +1,35 @@
+Tuan3
+A.
+Bai1
+a. Ngoài hàm Main() : in ra các phần tử mặc định bằng 0.
+   Trong hàm main: in ra giá trị bất kì.
+b. Ngoài hàm Main() : in ra các phần tử {1 2 3 4 0 0 ...}
+   Trong hàm main: in ra giá trị {1 2 3 4 0 0 0 0 ...}
+Bai2
+C. Baitap
+1. Timlap
+  #include<iostream>
+using namespace std;
+
+int main()
+{
+int n;
+cin >> n;
+int a[n];
+for(int i = 0; i < n; i++) {
+    cin >> a[i];
+    }
+    int dem = 0;
+    for(int i = 0; i < n; i++) {
+        for(int j = i; j < n; j++) {
+            if (a[j] == a[i]) {
+            dem++;
+            }
+        }
+
+     }
+ if(dem = 0) {
+        cout << "no";
+    }
+    else cout << "yes";
+}
