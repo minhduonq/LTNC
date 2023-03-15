@@ -1,0 +1,79 @@
+Phan B.
+2.
+#include <iostream>
+
+using namespace std;
+
+bool eq(int arr1[], int arr2[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (arr1[i] != arr2[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int arr1[] = {1, 2, 3, 4, 5};
+    int arr2[] = {1, 2, 3, 4, 6};
+    int n = 5;
+    if (eq(arr1, arr2, n)) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
+    return 0;
+}
+Bài 3.
+1000 lần
+Bài 4.
+in ra 17
+Bài 5.
+Bai 6.
+Hàm trên:
+f(int, double)
+Hàm dưới:
+f(double, int)
+Bài 7.
+D
+Bài 8.
+D
+Bài 9.
+D
+Bài 10.
+B
+Bài 11.
+C, D
+Bài 12.
+B
+Bài 13.
+C
+Bài 14.
+D
+Bài 15
+B
+Bài 16.
+C. Tùy vào nó được gọi khi nào.
+
+Hàm inline được định nghĩa trong mã nguồn và có thể được gọi bất cứ khi nào trong chương trình, không phụ thuộc vào thời gian biên dịch hoặc thời gian chạy.
+Hàm inline có thể giúp tăng tốc độ thực thi chương trình bằng cách giảm số lần truy cập đến bộ nhớ để gọi hàm.
+Bài 17.
+A
+Bài 18.
+A
+Bài 19.
+B
+Bài 20.
+D vì ko có danh sách đi kèm.
+Bài 21.
+B
+Bài 22.
+C
+Bài 23.
+D
+Bài 24.
+B
+Bài 25.
+D
+Bài 26.
+
