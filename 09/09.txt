@@ -1,0 +1,55 @@
+A. Thực hành
+1.
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+void concat(const char* a, const char* b)
+{
+   int len1 = strlen(a), len2 = strlen(b);
+   int lenc = len1 + len2 + 1;
+   char* c = new char[lenc];
+   strcpy(c, a);
+   strcat(c, b);
+   char d[lenc];
+   strcpy(d, c);
+   cout << d;
+   delete[] c;
+}
+
+int main() {
+   char a[] = "Hello";
+   char b[] = "World";
+   concat(a,b);
+}
+2. 
+ int* p = new int;
+ int* p2 = p;
+ *p = 10;
+ delete p; 
+p = nullptr; // Thêm dòng này để đặt con trỏ p bằng nullptr.
+*p2 = 100;
+ cout << *p2;
+ delete p2;
+GT: con trỏ p2 trỏ đến d/c mà con trỏ p đang trỏ tới, khi ta xóa con trỏ p rồi thì d/c đó sẽ dc giải phóng.
+Do đó nếu xóa con trỏ p2, ta đang y/c xóa vùng nhớ ko tồn tại-> gây lỗi. do đó đặt p = nullptr để con p2 ko trỏ lung tung.
+3.
+Đoạn mã lỗi khi thực hiện lệnh delete c;
+GT: con trỏ c ko được khởi tạo bằng new và trỏ đến một phần của mảng được cấp phát bởi new qua con trỏ a Vì vậy khi giải phóng bộ nhớ thông qua c sẽ gây lỗi thời gian chạy.
+cách giải quyết: 
+thay delete c = delete [] a;
+để giải phóng bộ nhớ cấp phát cho mảng a.
+4.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int x = 10;
+    int* p = &x; 
+    delete p; 
+    cout << x << endl; 
+    return 0;
+} // loi: double free or corruption (fasttop)
+Phan C. <Đang hoàn thiện>

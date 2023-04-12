@@ -1,0 +1,111 @@
+Phan A.
+____________________________________________________
+Bai1.
+#include<iostream>
+using namespace std;
+
+struct Point {
+    double x;
+    double y;
+};
+void print(Point v)
+{
+    cout << v.x << ", " << v.y;
+}
+
+int main()
+{
+    Point anh{2.3, 4.5};
+    print(anh);
+
+}
+_______________________________________________
+Bai2.
+
+-----Truyen tham trị:
+
+#include<iostream>
+using namespace std;
+
+struct Point {
+    double x;
+    double y;
+};
+void print(Point v)
+{
+    cout << &v.x << " " << &v.y;
+}
+
+int main()
+{
+    Point anh{2.3, 4.5};
+    cout << &anh.x << " " << &anh.y << endl;
+    print(anh);
+}
+--- In ra :
+
+0x61fe10 0x61fe18
+0x61fdb0 0x61fdb8
+
+-----Truyền tham chiếu:
+
+#include<iostream>
+using namespace std;
+
+struct Point {
+    double x;
+    double y;
+};
+void print(Point &v)
+{
+    cout << &v.x << " " << &v.y;
+}
+
+int main()
+{
+    Point anh{2.3, 4.5};
+    cout << &anh.x << " " << &anh.y << endl;
+    print(anh);
+}
+in ra:
+0x61fe10 0x61fe18
+0x61fe10 0x61fe18
+___________________________________________
+Bai3.
+#include<iostream>
+using namespace std;
+
+struct Point {
+    double x;
+    double y;
+};
+Point mid_point( Point const v1, Point const v2) {
+    Point a;
+    a.x = (v1.x+v2.x)/2;
+    a.y = (v1.y+v2.y)/2;
+    return a;
+}
+
+
+
+int main()
+{
+    Point anh{2.3, 4.5};
+    Point em{2.1, 3.4};
+    cout << mid_point(anh, em).x << " " << mid_point(anh, em).y;
+}
+________________________________________________
+Bai4.
+Nhan xet:
+Chung cach nhau 1 byte.
+______________________________________________
+Bai5.
+Nhận xét:
+Tương tự như khi sao chép con trỏ, lúc này biến truct cũng chỉ sao chép địa chỉ, do đó thay đổi sẽ ảnh hưởng lên đối
+tượng đích. Điều này có thể gây ra lỗi ko mong muốn nếu lập trình viên ko quản lí, xử lí.
+Phần C.
+
+
+
+
+
